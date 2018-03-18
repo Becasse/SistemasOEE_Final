@@ -1,0 +1,30 @@
+<div *ngIf="!userLogged" class="container">
+    <h2 class="text-center">Login</h2>
+    <br/>
+    <h4 style="color: red" *ngIf="!mensajeError.operacionCorrecta" class="text-center">{{mensajeError.texto}}</h4>
+    <br/>
+    <form>
+        <div class="text-center">
+            <p>
+                <label for="email" >EMAIL : </label>
+                <input type="email" name="email" [(ngModel)]="usuario.email">
+            </p>
+            <br/>
+            <p>
+                <label for="password">PASSWORD : </label>
+                <input type="password" name="password" [(ngModel)]="usuario.password">
+            </p>
+            <br/>
+        </div>
+        <p class="text-center">
+            <button (click)="login()" class="btn btn-primary">Login</button>
+        </p>
+    </form>
+</div>
+
+<div *ngIf="userLogged" class="container">
+    <h1 class="text-center">Estas logado</h1>
+    <br />
+     <p class="lead"><button (click)="logout()" class="btn btn-danger">Salir</button></p>
+</div>
+

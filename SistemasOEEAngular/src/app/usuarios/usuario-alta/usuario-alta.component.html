@@ -1,0 +1,30 @@
+<div class="container">
+    <h3>Vamos a crear un usuario nuevo</h3>
+    <br/>
+    <h4 *ngIf="!mensajeError.operacionCorrecta"style="color: red">{{mensajeError.texto}}</h4>
+    <h4 *ngIf="mensajeError.operacionCorrecta">{{mensajeError.texto}}</h4>
+    <br/>
+    <form>
+        <p>
+          <label for="email">EMAIL : </label>
+          <input type="email" name="email" [(ngModel)]="usuario.email">
+        </p>
+        <p>
+          <label for="nombre">NOMBRE : </label>
+          <input type="text" name="nombre" [(ngModel)]="usuario.nombre">
+        </p>
+        <p>
+          <label for="password">PASSWORD : </label>
+          <input type="password" name="password" [(ngModel)]="usuario.password">
+        </p>        
+        <p>
+          <label for="nombre">EDAD : </label>
+          <input type="number" name="edad" [(ngModel)]="usuario.edad">
+        </p>
+        <br/>
+        <p>
+          <button (click)="save()" class="btn btn-primary">Guardar</button>
+        </p>
+    </form>
+</div>
+

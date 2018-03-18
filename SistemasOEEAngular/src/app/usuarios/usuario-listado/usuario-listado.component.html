@@ -1,0 +1,18 @@
+<div class="col-md-6 col-md-offset-3 ">
+    <h2>Lista de usuarios registrados</h2>
+    <br/>
+    <p *ngIf="!userLogged" style="color: red" class="texto_listado"> No tienes permisos para ver el contenido de esta lista </p>
+    <table *ngIf="userLogged" class="table table-hover">
+        <tr class="texto_titulo" >
+            <td><strong>Nombre</strong></td>
+            <td><strong>Email</strong></td>
+            <td><strong>Edad</strong></td>
+        </tr>
+        <tr class="texto_listado" *ngFor="let usuario of listaUsuarios">
+            <td> {{usuario.nombre}}</td>
+            <td> {{usuario.email}} </td>
+            <td> {{usuario.edad}} </td>
+        </tr>
+    </table>  
+</div>
+
